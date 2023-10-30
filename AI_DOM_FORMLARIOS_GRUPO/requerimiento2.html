@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria</title>
+     <!-- Vinculación al .css -->
+    <link rel="stylesheet" href="/requerimiento2.css">
+
+     <!-- Vinculación al .js (evitamos tener JS en el fichero html como buena práctica) -->
+    <script type="text/javascript" src="/requerimiento2.js"></script>
+</head>
+
+
+<body>
+  <h2>Realiza tu pedido</h2>
+    <form>
+        <!-- Formulario -->
+        <!-- Creación de los campos de texto/teléfono/mail,
+        dontándoles del tipo de etiqueta, id y nombre-->
+            <div class="datos">
+              <label for="nombre">Nombre y apellidos:</label>
+              <input type="text" id="nombre" name="nombre">
+              <label for="direccion">Dirección:</label>
+              <input type="text" id="direccion" name="direccion">
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" id="telefono" name="telefono">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email">
+            </div>
+
+        <!-- Creación de radio button-->
+            <div class="tamanopizza">
+              <label for="tamano">Tamaño de la pizza:</label>
+              <label for="pequena">
+               <input type="radio" id="pequena" name="tamano" value="pequena"> Pequeña 5€ </label>
+              <label for="mediana">
+                <input type="radio" id="mediana" name="tamano" value="mediana"> Mediana 10€ </label>
+              <label for="grande">
+                <input type="radio" id="grande" name="tamano" value="grande"> Grande 15€</label>
+            </div>
+
+        <!-- Creación de checkbox-->
+            <div class="ingredientes">
+                <label for="quesos">Pizza cuatro quesos:</label>
+                <label for="mozzarela">
+                 <input type="checkbox" id="mozzarela" name="quesos" value="mozzarela"> Mozzarela (1€) </label>
+                <label for="roquefort">
+                 <input type="checkbox" id="roquefort" name="quesos" value="roquefort"> Roquefort (1€)</label>
+                <label for="chedar">
+                 <input type="checkbox" id="chedar" name="quesos" value="chedar"> Chedar (1€) </label>
+                <label for="cabra">
+                 <input type="checkbox" id="cabra" name="quesos" value="cabra"> Cabra (1€)</label>
+            </div>  
+        <!-- Creación de button para "proceso de envío" sin envío al servidor -->
+            <button type="button" onclick=" validacion()">Procesar Pedido</button>
+
+        <!-- Arrojamos el precio total del pedido en el caso de que se haya validado el formulario-->   
+            <p id="precioTotal"></p>
+  
+        </form>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="requerimiento1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="contenedor"></div>
+
+    <script>
+      // Captura el elemento contenedor con el ID "contenedor"
+      let container = document.getElementById("contenedor");
+
+      // Crea un formulario
+      let formulario = document.createElement("form");
+
+      // Crea campos de entrada de texto para DNI, nombre, apellidos, dirección y teléfono
+      let dni = document.createElement("input");
+      dni.type = "text";
+      dni.placeholder = "DNI";
+
+      let nombre = document.createElement("input");
+      nombre.type = "text";
+      nombre.placeholder = "nombre";
+
+      let apellidos = document.createElement("input");
+      apellidos.type = "text";
+      apellidos.placeholder = "apellidos";
+
+      let direccion = document.createElement("input");
+      direccion.type = "text";
+      direccion.placeholder = "dirección";
+
+      let tel = document.createElement("input");
+      tel.type = "text";
+      tel.placeholder = "teléfono";
+
+      // Radio Buttons
+
+      // 1) Ascendencia
+      let ascendencia = document.createElement("div");
+      ascendencia.textContent = "Elije ascendencia:";
+
+      // Define un array de opciones de ascendencia
+      var opcionesAscendencia = ["Humana", "Élfica", "Enana", "Gnoma"];
+
+      // Utiliza un bucle forEach para crear radio buttons para cada opción de ascendencia
+      opcionesAscendencia.forEach(function (opcion) {
+        let radio1 = document.createElement("input");
+        radio1.type = "radio";
+        radio1.name = "ascendencia";
+        radio1.value = opcion;
+
+        let label1 = document.createElement("label");
+        label1.textContent = opcion;
+
+        ascendencia.appendChild(radio1);
+        ascendencia.appendChild(label1);
+      });
+
+      // 2) Clase
+      let clase = document.createElement("div");
+      clase.textContent = "Elije clase:";
+
+      // Define un array de opciones de clase
+      let opcionesClase = ["Guerrero", "Druida", "Bárbaro", "Pícaro"];
+
+      // Utiliza un bucle forEach para crear radio buttons para cada opción de clase
+      opcionesClase.forEach(function (opcion) {
+        let radio2 = document.createElement("input");
+        radio2.type = "radio";
+        radio2.name = "clase";
+        radio2.value = opcion;
+
+        let label2 = document.createElement("label");
+        label2.textContent = opcion;
+
+        clase.appendChild(radio2);
+        clase.appendChild(label2);
+      });
+
+      // Checkboxes
+
+      var checkboxDiv = document.createElement("div");
+      checkboxDiv.textContent = "Elije armas: ";
+
+      var opcionesArmas = ["Espada", "Daga", "Escudo", "Arco", "Maza"];
+
+      opcionesArmas.forEach(function (option) {
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = "opciones";
+        checkbox.value = option;
+
+        var label3 = document.createElement("label");
+        label3.textContent = option;
+
+        checkboxDiv.appendChild(checkbox);
+        checkboxDiv.appendChild(label3);
+      });
+
+      var checks = document.createElement("div");
+      checks.id = "checks";
+
+      // Imágenes
+
+      var imagen1 = document.createElement("img");
+      imagen1.src = "img/d20.png";
+      imagen1.alt = "d20";
+
+      var imagen2 = document.createElement("img");
+      imagen2.src = "img/dnd.png";
+      imagen2.alt = "D&D";
+
+      //Select
+
+      // Crear un elemento <select>
+      var select = document.createElement("select");
+
+      // Crear las opciones del select
+      var opcionesHorario = ["Horario Mañana", "Horario Tarde", "Indiferente"];
+
+      // Iterar a través de las opciones de horario
+      opcionesHorario.forEach(function (opcion) {
+      var option = document.createElement("option"); // Crear un elemento <option> para cada opción
+      option.text = opcion; // Texto visible de la opción
+      select.appendChild(option);   // Agregar la opción al select
+      });
+
+      // Área de texto
+
+      var textArea = document.createElement("textarea");
+      textArea.placeholder = "Añade el trasfondo";
+
+      // Agrega el formulario al contenedor
+      container.appendChild(formulario);
+
+      // Agrega los campos de entrada, radio buttons, checkboxes, imágenes y el área de texto al formulario
+      formulario.appendChild(imagen2);
+      formulario.appendChild(dni);
+      formulario.appendChild(nombre);
+      formulario.appendChild(apellidos);
+      formulario.appendChild(direccion);
+      formulario.appendChild(tel);
+      formulario.appendChild(select);
+      checks.appendChild(clase);
+      checks.appendChild(ascendencia);
+      checks.appendChild(checkboxDiv);
+      formulario.appendChild(checks);
+      formulario.appendChild(imagen1);
+      formulario.appendChild(textArea);
+    </script>
+  </body>
+</html>
